@@ -1,0 +1,44 @@
+<!-- AWP_In_Variable Name='"Danelogowania".has' -->
+<!-- AWP_In_Variable Name='"Danelogowania".log' -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Kontakt</title>
+        <link rel="stylesheet" href="stylekon.css" />
+	    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700;800&display=swap" rel="stylesheet">
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <header class="first"><a href="user_page.html">User page</a></header>
+	    <header><a href="Profil.html">Profil</a></header>
+        <header>
+            <form class="wylog--fr" method="post" action="">
+                <input class="wylog--in" type="submit" value="Wyloguj">
+                <input type="hidden" name='"Danelogowania".has' value="''">
+                <input type="hidden" name='"Danelogowania".log' value="''">
+            </form>
+        </header>
+    </head>
+    <body>
+        <div>
+			<img src="dystrybutor_ikon.png" alt="" class="bgimg bgimg--petrol">
+		</div>
+        <div class="div srodek">
+            <div class="div starttext">
+                <h3>W celu otrzymania pomocy proszę zgłosić problem do opiekuna stacji bądź skontaktować się poprzez mail lub telefonicznie.</h3>
+                <ul>
+                    <li><a href="tel:+48608126305">Telefon</a></li>
+                    <li><a href="mailto:konstantyodwazny@gmail.com">Mail</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var pom = ':="Danelogowania".spr_user:'
+        if (pom == '0') {
+            location.href = "strona_log.html"
+        }
+    </script>
+    
+</html>

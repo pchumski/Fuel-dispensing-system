@@ -1,0 +1,164 @@
+<!-- AWP_In_Variable Name='"Danelogowania".user_nr' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[1].Login' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[2].Login' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[3].Login' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[4].Login' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[5].Login' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[6].Login' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[7].Login' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[8].Login' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[9].Login' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[10].Login' -->
+<!-- AWP_In_Variable Name='"Danelogowania".Users[11].Login' -->
+
+<!-- AWP_In_Variable Name='"Danelogowania".userpaliwo' -->
+<!-- AWP_In_Variable Name='"Danelogowania".startnocny' -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Zarzadzanie</title>
+    <link rel="stylesheet" href="zarzadzanie.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700;800&display=swap" rel="stylesheet">
+	<script src="js/jquery-3.6.0.min.js"></script> 
+</head>
+<body>
+    <div>
+        <img src="dystrybutor_ikon.png" alt="" class="bgimg bgimg--petrol">
+    </div>
+    <div class="srodek">
+        <div class="starttext">
+            <h3>Wybierz uzytkownika, ktory ma odebrac dzisiaj paliwo i kliknij potwierdź by dodać go do systemu </h3>
+        </div>
+        <select name="Wybierz użytkownika" id="user_select">
+			<option value="22">brak</option>
+            <option value="0">:="Danelogowania".Users[0].Login:</option>
+            <option value="1">:="Danelogowania".Users[1].Login:</option>
+            <option value="2">:="Danelogowania".Users[2].Login:</option>
+            <option value="3">:="Danelogowania".Users[3].Login:</option>
+            <option value="4">:="Danelogowania".Users[4].Login:</option>
+            <option value="5">:="Danelogowania".Users[5].Login:</option>
+            <option value="6">:="Danelogowania".Users[6].Login:</option>
+            <option value="7">:="Danelogowania".Users[7].Login:</option>
+            <option value="8">:="Danelogowania".Users[8].Login:</option>
+            <option value="9">:="Danelogowania".Users[9].Login:</option>
+            <option value="10">:="Danelogowania".Users[10].Login:</option>
+			<option value="11">:="Danelogowania".Users[11].Login:</option>
+        </select> 
+        <div class="tabela">
+            <table class="GeneratedTable">
+                <thead>
+                  <tr>
+                    <th>Login</th>
+                    <th>Ilość Paliwa</th>
+                    <th>Id</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="lg"></td>
+                    <td id="il"></td>
+                    <td id="id"></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="text">
+            <ul>
+                <li><a href="admin.html">Powrót</a></li>
+            </ul>
+        </div>
+        <div class="starttext">
+            <h3>Wpisz ilość paliwa i potwierdź </h3>
+        </div>
+        <form class="przycisk" method="post" action="">
+            <input id="nr" type="hidden" name='"Danelogowania".user_nr' value="">
+            <input id="nr" type="hidden" name='"Danelogowania".startnocny' value="1">
+            <input type="text" name='"Danelogowania".userpaliwo' />
+            <input class="napis" type="submit" value="Potwierdź" />
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+    function wybor(){
+        var pom = document.getElementById("user_select").value;
+        if (pom == 0) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[0].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[0].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[0].id:';
+        }
+        if (pom == 1) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[1].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[1].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[1].id:';
+        }
+		if (pom == 2) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[2].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[2].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[2].id:';
+        }
+		if (pom == 3) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[3].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[3].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[3].id:';
+        }
+		if (pom == 4) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[4].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[4].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[4].id:';
+        }
+		if (pom == 5) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[5].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[5].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[5].id:';
+        }
+		if (pom == 6) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[6].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[6].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[6].id:';
+        }
+		if (pom == 7) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[7].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[7].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[7].id:';
+        }
+		if (pom == 8) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[8].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[8].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[8].id:';
+        }
+		if (pom == 9) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[9].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[9].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[9].id:';
+        }
+		if (pom == 10) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[10].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[10].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[10].id:';
+        }
+		if (pom == 11) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[11].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[11].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[11].id:';
+        }
+		if (pom == 12) {
+			document.getElementById("lg").innerHTML = ':="Danelogowania".Users[12].Login:';
+			document.getElementById("il").innerHTML = ':="Danelogowania".Umowy[12].ilosc_paliwa:';
+			document.getElementById("id").innerHTML = ':="Danelogowania".Umowy[12].id:';
+        }
+        document.getElementById("nr").value = pom;
+        //document.write(pom);
+
+    }
+    var sel = document.querySelector('#user_select');
+    sel.addEventListener('change', wybor);
+	
+    
+</script>
+</html>

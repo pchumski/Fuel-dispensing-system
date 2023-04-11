@@ -1,0 +1,131 @@
+:root {
+    --blue: #689eea;
+    --darkblue: #1e55df;
+    --green: #38ccae; 
+    --dark: #1b1b1b;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: inline;
+    margin-left: 2%;
+    top: 0px;
+    color: white;
+}
+
+
+.text
+{
+    width: 50%;
+    height: 50%;
+    display: contents;
+    
+}
+
+body {
+    background: var(--green);
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right top, var(--dark),var(--green));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+ul {
+	text-align: center;
+	border-bottom: 0px solid #888;
+	padding-bottom: 0px;
+    height: 50%;
+    width: 50%;
+    display: contents;
+
+}
+
+li {
+	white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+    background: linear-gradient(to right top, rgba(0,0,0,0.95), rgba(0,0,0,0.35));
+    color: white;
+	border: 2px solid #888;
+	padding: 10px;
+    display: flex;
+}
+a {
+    color: white;
+    width: 100%;
+}
+
+a:hover {
+	background-color: #fff;
+	border-bottom-color: #fff;
+}
+.srodek {
+    width: 50%;
+    height: 30%;
+    background: rgba(0, 0, 0, 0.75);
+    background: linear-gradient(to right top, rgba(0,0,0,0.75), rgba(0,0,0,0.25));
+    margin-left: 0px;
+    border-radius: 30px;
+    position: relative;
+    backdrop-filter: blur(8px);
+}
+h3 {
+    font-size: 18px;
+    color: white;
+    margin-left: 20px;
+}
+#zegar {
+    display: flex;
+    justify-content: right;
+    align-items: baseline;
+    position: absolute;
+    width: 100vh;
+    top: 0;
+    margin-bottom: 60%;
+    color: white;
+}
+.wylog--fr {
+    display: inline;
+    background-color: none;
+    width: 100%;
+
+}
+.wylog--in {
+    cursor: grab;
+    background: linear-gradient(to right top, rgba(0,0,0,0.95), rgba(0,0,0,0.35));
+    color: white;
+    width: 100%;
+    border-color: lightgray;
+    padding: 10px;
+    font-size: 18px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+   
+}
+.bgimg {
+    position: absolute;
+}
+.bgimg--petrol {
+    right: 0;
+    top: 50vh;
+    height: 100vh;
+    width: 50%;
+    bottom: 50%;
+    opacity: 0.85;
+    transform: translate(50%,-50%);
+}

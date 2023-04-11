@@ -1,0 +1,179 @@
+<!-- AWP_In_Variable Name='"Danelogowania".tankowane_paliwo' -->
+<!-- AWP_In_Variable Name='"Danelogowania".starttank' -->
+<!-- AWP_In_Variable Name='"Danelogowania".stoptank' -->
+<!-- AWP_In_Variable Name='"Danelogowania".has' -->
+<!-- AWP_In_Variable Name='"Danelogowania".log' -->
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<!-- <meta http-equiv="refresh" content="3"> -->
+        <title>User_page</title>
+        <link rel="stylesheet" href="user_style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700;800&display=swap" rel="stylesheet">
+        <header class="first"><a href="Profil.html">Profil</a> </header>
+		<script src="js/jquery-3.6.0.min.js"></script> 
+        <header><a href="Kontakt.html">Kontakt</a></header>
+		<header>
+			<form class="wylog--fr" method="post" action="">
+                <input class="wylog--in" type="submit" value="Wyloguj">
+                <input type="hidden" name='"Danelogowania".has' value="''">
+                <input type="hidden" name='"Danelogowania".log' value="''">
+            </form>
+		</header>
+    </head>
+    <body>
+		<div>
+			<img src="dystrybutor_ikon.png" alt="" class="bgimg bgimg--petrol">
+		</div>
+		<div class="srodek">
+			<div class="starttext">
+				<h3>Witamy w naszej stacji Paliw. Proszę podłączyć dystrybutor i wybrać przycisk start aby zatankować zakontraktowaną ilość paliwa</h3>
+			</div>
+			<div class="stan">
+				<label class="lab--circle" for="ic">Aktualny stan: <a id="wstaw"> </a> </label>
+				<img id="ic" src="red-circle.png" />	
+			</div>
+			<table class="button--table">
+				<tr>
+					<td align="left">
+						<form method="post" action="">
+							<input class="przycisk" type="submit" value="Start">
+							<input type="hidden" name='"Danelogowania".starttank' value="1">
+							<input type="hidden" name='"Danelogowania".stoptank' value="0">
+						</form>
+					</td>
+					<td align="center">
+						<form method="post" action="">
+							<input class="przycisk" type="submit" value="Stop">
+							<input type="hidden" name='"Danelogowania".stoptank' value="1"> 
+							<input type="hidden" name='"Danelogowania".starttank' value="0">
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td height="25px">
+				</tr>
+			</table>
+			<table width="100%" height="50px" border=0>
+				<tr>
+					<td width="50px" align="left" height="25px">
+						<h3>Tank Level</h3>
+					</td>
+					<td width="50px" align="left" height="25px">
+						<h3 id="ilpaliwo"></h3>
+					</td>
+					<td width="1500px" align="left" height="30px">
+						<canvas width="600px" height="50px" class="pasek"></canvas>
+					</td>
+					
+					<!-- <td width="1500px" align="left" height="30px">
+						<div id="myProgress">
+							<div id="myBar"></div>
+						</div>
+					</td> -->
+				</tr>
+			</table>
+			<label class="pom" id="spr" name="spr"></label>
+			<label class="pom" id="spr1" name="spr1"></label>
+		</div>
+        
+		
+    </body>
+	<!-- Skrypt do podmiany zdjec -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+        $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("pod.htm", function(result){
+                $('#spr1').text(result);
+                });
+        	},1000);
+    	});
+		var pom = 0;
+		var ij = setInterval(podmien, 1000);
+		//var pom = ':="Danelogowania".podlaczone:'
+		function podmien(){
+		pom = document.getElementById("spr1").innerHTML;
+		if ( pom == 1 ) {
+			document.getElementById("ic").src = "greencircle.png";
+			//location.href = "Profil.html"
+        }
+		else
+		{
+			document.getElementById("ic").src = "red-circle.png";
+		}
+		document.getElementById("wstaw").innerHTML = pom;
+		
+		}
+	</script>
+	<!-- Pasek ładowania -->
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+        $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOtan.htm", function(result){
+                $('#spr').text(result);
+                });
+        },1000);
+    });
+	var width = 1;
+	var procent = 0;
+	var szerokosc = 0;
+	var j;
+	var id= setInterval(frame, 2000);
+	// Zmienne JS i canvas
+	const paseklog = document.querySelector('.pasek');
+	const ctx = paseklog.getContext('2d');
+	ctx.fillStyle = 'black';
+	ctx.fillRect(10,10,1,50);
+
+	ctx.lineWidth=2;
+    ctx.strokeRect(10, 10, paseklog.width - 15, 40);
+
+	function frame() {
+	//var elem = document.getElementById("myBar");
+	//document.getElementById("spr").innerHTML = width;
+
+	width = document.getElementById("spr").innerHTML;
+	document.getElementById("ilpaliwo").innerHTML = width + " L";
+
+	// Zmienne Tia Portal
+	var start = ':="Danelogowania".starttank:';
+	var stopt = ':="Danelogowania".stoptank:';
+	//var start = '1';
+	//var stopt = '0';
+	var indeks = ':="Danelogowania".i:';
+	var maxlim = ':="Danelogowania".limit:';
+
+		if (start == '1' && stopt == '0')
+		{
+			if ( Number(width) <= Number(maxlim)) {
+				//width+=100;
+				procent = Math.round(100*(width/Number(maxlim)));
+				//procent = Math.round(100*(width/800));
+				szerokosc = Math.round((procent/100)*Number(paseklog.width));
+				ctx.fillRect(10,10, szerokosc, 50);
+			}
+		}
+		else if ( start == '0' && stopt == '1' ){
+			procent = Math.round(100*(width/Number(maxlim)));
+			//procent = Math.round(100*(width/800));
+			szerokosc = Math.round((procent/100)*Number(paseklog.width));
+			ctx.fillRect(10,10, szerokosc, 50);
+		}
+	}
+
+	</script>
+	
+	<script type="text/javascript">
+		//Wylogowywanie
+        var pom = ':="Danelogowania".spr_user:'
+        if (pom == '0') {
+            location.href = "strona_log.html"
+        }
+    </script>
+</html>

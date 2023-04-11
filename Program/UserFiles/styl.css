@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section {
+    
+    display: grid;
+    margin: 5px;
+}
+body {
+    background: var(--green);
+    margin: 0;
+    width: 100vh;
+    height: 100vh;
+    background: linear-gradient(to right top, var(--dark),var(--green));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; 
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+form {
+    max-width: 1500px;
+    max-height: 80vh;
+    width: 66%;
+    height: 40%;
+    background: rgba(0, 0, 0, 0.75);
+    background: linear-gradient(to right top, rgba(0,0,0,0.75), rgba(0,0,0,0.25));
+    display: table;
+    padding: 28px 62px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    overflow: auto;
+    position: relative;
+}
+.pom {
+    display: none;
+}
+:root {
+    --green: #38ccae; 
+    --dark: #1b1b1b;
+}
+.log {
+    margin-top: 20%;
+}
+.has {
+    margin-bottom: 15%;
+}
+label {
+    color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+tr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+h1 {
+    font-size: 32px;
+}
+p {
+    font-size: 12px;
+}
+.pom {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+input {
+    margin-right: 15%;
+    margin-left: 15%;
+}
+.bgimg {
+    position: absolute;
+}
+.bgimg--arrow {
+    height: 30vh;
+    top: 0;
+    right: 60%;
+    animation: slideDown 12s linear infinite;
+}
+.bgimg--petrol {
+    right: 0;
+    top: 50vh;
+    width: 50%;
+    bottom: 50%;
+    opacity: 0.85;
+    transform: translate(50%,-50%);
+}
+#zegar {
+    display: flex;
+    justify-content: right;
+    align-items: baseline;
+    position: absolute;
+    width: 100vh;
+    top: 0;
+    margin-bottom: 60%;
+}
+@keyframes slideDown {
+    from {transform: translateY(-30vh)}
+    to {transform: translateY(100vh)}
+}

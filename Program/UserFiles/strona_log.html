@@ -1,0 +1,91 @@
+<!-- AWP_In_Variable Name = '"Danelogowania".spruser' -->
+<!-- AWP_In_Variable Name = '"Danelogowania".log' -->
+<!-- AWP_In_Variable Name = '"Danelogowania".has' -->
+<!DOCTYPE html>
+  <html>     
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Read/Write</title>
+      <link rel="stylesheet" href="styl.css">
+      <script src="js/jquery-3.6.0.min.js"></script> 
+      <script src="js/timer.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700;800&display=swap" rel="stylesheet">
+    </head>
+    <body onload="aktualizacja();">
+        <div id="zegar"></div>
+        <div>
+            <img src="iconlog.png" alt="" class="bgimg bgimg--arrow" />
+            <img src="dystrybutor_ikon.png" alt="" class="bgimg bgimg--petrol">
+        </div>
+        <tr>
+            <form method="post" action="" >
+                <header>
+                    <h1>Witamy w naszej stacji!</h1>
+                    <p>Zaloguj się aby przejść dalej</p>
+                </header>
+                <section>
+                    <label class="log" for="lg">Login:</label>
+                    <input type="text" id="lg" name='"Danelogowania".log' />
+                </section>
+                <section>
+                    <label for="hs">Hasło:</label>
+                    <input type="text" id="hs" name='"Danelogowania".has' />
+                </section>
+                <section>
+                    <input class="has" type="submit" value="Zaloguj" />
+                </section>
+            </form>
+            <label class="pom" id="spr" name="spr">:="Danelogowania".spr_user:</label>
+        </tr>
+        
+    </body>
+    <script type="text/javascript">
+        var tekstlogin = document.querySelector('#lg');
+        var teksthaslo = document.querySelector('#hs');
+        var sub = document.querySelector('.has');
+        function zamienl(){
+            tekstlogin.value = "'"+tekstlogin.value+"'";
+            //teksthaslo.value = "'"+tekstlogin.value+"'";
+            //console.log(teksthaslo.value);
+        }
+        function zamienh(){
+            //tekstlogin.value = "'"+tekstlogin.value+"'";
+            teksthaslo.value = "'"+teksthaslo.value+"'";
+            //console.log(teksthaslo.value);
+        }
+
+        tekstlogin.addEventListener('change', zamienl);
+        teksthaslo.addEventListener('change', zamienh);
+        
+        $(document).ready(function(){
+        $.ajaxSetup({ cache: false });
+        setInterval(function() {
+            $.get("IOuser.htm", function(result){
+                $('#spr').text(result);
+                });
+        },1000);
+    });
+    var pom = ':="Danelogowania".spr_user:'
+        if (pom == '1') {
+            location.href = "user_page.html";
+        }
+    var poma = ':="Danelogowania".spr_admin:'
+    if (poma == '1') {
+            location.href = "admin.html"
+        }
+	
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          //Auto login
+          var spost = 'Login=admin&Password=';
+              $.post("/FormLogin",spost,function(result){});
+      });
+    </script>
+	
+</html>
+

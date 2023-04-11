@@ -1,0 +1,162 @@
+:root {
+    --blue: #689eea;
+    --darkblue: #1e55df;
+    --green: #38ccae; 
+    --dark: #1b1b1b;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: inline;
+    margin-left: 2%;
+    top: 0px;
+    color: white;
+}
+
+.starttext
+{
+    margin-bottom: 2%;
+    padding: 8px;
+    color: white;
+}
+
+.tabela
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: var(--green);
+    width: 100vh;
+    height: 100vh;
+    background: linear-gradient(to right top, var(--dark),var(--green));
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.text
+{
+    display: flex;
+    justify-content: left bottom;
+    align-items: left bottom;
+    
+}
+
+ul, ul li {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+    justify-content: left bottom;
+    align-items: left bottom;
+}
+
+ul {
+	text-align: center;
+	border-bottom: 0px solid #888;
+	padding-bottom: 0px;
+}
+
+ul li {
+	
+	white-space: nowrap;
+	margin-right: 1000px;
+    display: flex;
+    justify-content: left bottom;
+    align-items: left bottom;
+}
+
+ul a:link, ul a:visited, a {
+	text-decoration: none;
+	background: linear-gradient(to right top, rgba(0,0,0,0.95), rgba(0,0,0,0.35));
+	color: white;
+	border: 2px solid white;
+	padding: 10px;
+}
+
+ul a:hover {
+	background-color: #fff;
+	border-bottom-color: #fff;
+}
+table.GeneratedTable {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #38ccae;
+    border-style: solid;
+    color: white;
+  }
+  
+  table.GeneratedTable td, table.GeneratedTable th {
+    border-width: 2px;
+    border-color: darkgray;
+    border-style: solid;
+    padding: 3px;
+  }
+  
+  table.GeneratedTable {
+    background: linear-gradient(to right top, rgba(0,0,0,0.95), rgba(0,0,0,0.35));
+  }
+  .srodek {
+    width: 96%;
+    height: 90%;
+    background: rgba(0, 0, 0, 0.75);
+    background: linear-gradient(to right top, rgba(0,0,0,0.75), rgba(0,0,0,0.25));
+    margin-left: 0px;
+    border-radius: 30px;
+    position: relative;
+    backdrop-filter: blur(8px);
+}
+.przycisk {
+    display: inline;
+    background-color: none;
+}
+.napis {
+    cursor: grab;
+    background: linear-gradient(to right top, rgba(0,0,0,0.95), rgba(0,0,0,0.35));
+    color: white;
+    padding: 10px;
+    border-color: white;
+    
+}
+.dod--przycisk {
+    cursor: grab;
+}
+.dod--form {
+    width: 63%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-style: solid;
+    color: white;
+    background: linear-gradient(to right top, rgba(0,0,0,0.95), rgba(0,0,0,0.35));
+}
+.dod--form td, .dod--form th {
+    border-width: 2px;
+    border-color: darkgray;
+    border-style: solid;
+    padding: 3px;
+}
+#fd {
+    display: none;
+}
+.bgimg {
+    position: absolute;
+}
+.bgimg--petrol {
+    right: 0;
+    top: 50vh;
+    height: 100vh;
+    width: 50%;
+    bottom: 50%;
+    opacity: 0.85;
+    transform: translate(50%,-50%);
+}

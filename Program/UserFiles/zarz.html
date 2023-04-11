@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Zarzadzanie</title>
+    <link rel="stylesheet" href="zarzadzanie.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700;800&display=swap" rel="stylesheet">
+	<script src="js/jquery-3.6.0.min.js"></script> 
+</head>
+
+<body>
+<select name="Wybierz użytkownika" id="user_select">
+            <option value="0">:="Danelogowania".Users[0].Login:</option>
+            <option value="1">:="Danelogowania".Users[1].Login:</option>
+            <option value="2">:="Danelogowania".Users[2].Login:</option>
+            <option value="3">:="Danelogowania".Users[3].Login:</option>
+            <option value="4">:="Danelogowania".Users[4].Login:</option>
+            <option value="5">:="Danelogowania".Users[5].Login:</option>
+            <option value="6">:="Danelogowania".Users[6].Login:</option>
+            <option value="7">:="Danelogowania".Users[7].Login:</option>
+            <option value="8">:="Danelogowania".Users[8].Login:</option>
+            <option value="9">:="Danelogowania".Users[9].Login:</option>
+            <option value="10">:="Danelogowania".Users[10].Login:</option>
+			<option value="11">:="Danelogowania".Users[11].Login:</option>
+</select> 
+ <div class="tabela">
+            <table class="GeneratedTable">
+                <thead>
+                  <tr>
+                    <th>Login</th>
+                    <th>Ilość Paliwa</th>
+                    <th>Id</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="lg"></td>
+                    <td id="pal"></td>
+                    <td id="uid"></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="text">
+            <ul>
+                <li><a href="admin.html">Powrót</a></li>
+            </ul>
+        </div>
+        <form class="przycisk" method="post" action="">
+            <input class="napis" type="submit" value="Potwierdź" />
+            <input id="nr" type="hidden" name=':="Danelogowania".user_nr:' value="">
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+    function wybor(){
+        var pom = document.getElementById("user_select").value;
+        //document.getElementById("lg").innerHTML = ":=\"Danelogowania\".Users[" + pom + "].Login:"
+        //document.getElementById("pal").innerHTML = ":=\"Danelogowania\".Umowy[" + pom + "].ilosc_paliwa:"
+        //document.getElementById("uid").innerHTML = ":=\"Danelogowania\".Umowy[" + pom + "].id:"
+        document.getElementById("nr").value = pom;
+        //document.write(pom);
+
+    }
+    var sel = document.querySelector('#user_select');
+    //sel.addEventListener('change', wybor);
+    
+</script>
+</html>
